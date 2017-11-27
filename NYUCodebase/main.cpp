@@ -126,13 +126,22 @@ int main(int argc, char *argv[])
     std::cout << "\n\n\n" << red.texture << "\n\n\n";
     std::cout << "\n\n\n" << blue.texture << "\n\n\n";
     std::cout << "\n\n\n" << ball.texture << "\n\n\n";
+    
     Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 4096 );
     Mix_Chunk *beep1;
     beep1 = Mix_LoadWAV("beep1.wav");
+    Mix_Chunk *beep2;
+    beep2 = Mix_LoadWAV("beep2.wav");
+    Mix_Music *music;
+    music = Mix_LoadMUS("Tetris.mp3");
+    Mix_PlayMusic(music, -1);
     
+    GLint redColor = LoadTexture(RESOURCE_FOLDER"redSquare.png");
+    GLint blueColor = LoadTexture(RESOURCE_FOLDER"blueSquare.png");
     
     while (!done) {
-        Mix_Volume(-1, 50);
+        Mix_Volume(-1, 80);
+        Mix_VolumeMusic(50);
 
         
         ball.speed += 0.01;
@@ -225,27 +234,30 @@ int main(int argc, char *argv[])
         
         
             if(paddleHit(blue, ball) && ball.xComp >= 0){
-                Mix_PlayChannel( -1, beep1, 1);
+                Mix_PlayChannel( -1, beep2, 0);
                 float difference = ball.y - blue.y;
                 ball.yComp = difference/blue.height;
                 ball.xComp = -ball.xComp;
-                ball.texture = LoadTexture(RESOURCE_FOLDER"blueSquare.png");
+                ball.texture = blueColor;
                 
                 }
             if(paddleHit(red, ball) && ball.xComp <= 0){
+                Mix_PlayChannel( -1, beep2, 0);
                 float difference = ball.y - red.y;
                 ball.yComp = difference/red.height;
                 ball.xComp = -ball.xComp;
-                ball.texture = LoadTexture(RESOURCE_FOLDER"redSquare.png");
+                ball.texture = redColor;
             
         }
             if (ball.y > 1.6 && ball.yComp > 0) {
                 ball.yComp = - ball.yComp;
+                Mix_PlayChannel( -1, beep1, 0);
             }
         
     
             if (ball.y < -2 && ball.yComp < 0) {
                 ball.yComp = - ball.yComp;
+                Mix_PlayChannel( -1, beep1, 0);
             }
     
         
@@ -257,6 +269,8 @@ int main(int argc, char *argv[])
         }
     }
     Mix_FreeChunk(beep1);
+    Mix_FreeChunk(beep2);
+    Mix_FreeMusic(music);
     SDL_Quit();
     return 0;
 }

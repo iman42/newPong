@@ -21,6 +21,9 @@
 		6DEF23C21B96CC2600BCE792 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF23BC1B96CC2600BCE792 /* Matrix.cpp */; };
 		6DEF23C31B96CC2600BCE792 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF23BE1B96CC2600BCE792 /* ShaderProgram.cpp */; };
 		6DEF23C41B96CC2600BCE792 /* vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF23C01B96CC2600BCE792 /* vertex.glsl */; };
+		D626802A1FCB9F780077DBC6 /* beep2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D62680281FCB9F780077DBC6 /* beep2.wav */; };
+		D626802B1FCB9F780077DBC6 /* beep1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D62680291FCB9F780077DBC6 /* beep1.wav */; };
+		D65A49551FCBA6C10003F29A /* Tetris.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D65A49541FCBA6C10003F29A /* Tetris.mp3 */; };
 		D6D7D91A1FCA6B7A00A278C3 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D7D9191FCA6B7A00A278C3 /* SDL2_mixer.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,9 @@
 		6DEF23BE1B96CC2600BCE792 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
 		6DEF23BF1B96CC2600BCE792 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
 		6DEF23C01B96CC2600BCE792 /* vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
+		D62680281FCB9F780077DBC6 /* beep2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep2.wav; path = NYUCodebase/beep2.wav; sourceTree = SOURCE_ROOT; };
+		D62680291FCB9F780077DBC6 /* beep1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep1.wav; path = NYUCodebase/beep1.wav; sourceTree = SOURCE_ROOT; };
+		D65A49541FCBA6C10003F29A /* Tetris.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Tetris.mp3; path = NYUCodebase/Tetris.mp3; sourceTree = SOURCE_ROOT; };
 		D6D7D9191FCA6B7A00A278C3 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../../../Library/Frameworks/SDL2_mixer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +137,9 @@
 		6D5A86D119AE5C710066C1FD /* NYUCodebaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				D62680291FCB9F780077DBC6 /* beep1.wav */,
+				D65A49541FCBA6C10003F29A /* Tetris.mp3 */,
+				D62680281FCB9F780077DBC6 /* beep2.wav */,
 				6D5A86D219AE5C710066C1FD /* Supporting Files */,
 			);
 			path = NYUCodebaseTests;
@@ -214,11 +223,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D626802B1FCB9F780077DBC6 /* beep1.wav in Resources */,
 				6D5A86B819AE5C710066C1FD /* InfoPlist.strings in Resources */,
 				6DEF23C11B96CC2600BCE792 /* fragment.glsl in Resources */,
 				6DE9D2F11BA6AB8C002D599C /* fragment_textured.glsl in Resources */,
+				D626802A1FCB9F780077DBC6 /* beep2.wav in Resources */,
 				6D5A86C619AE5C710066C1FD /* Images.xcassets in Resources */,
 				6D5A86BE19AE5C710066C1FD /* Credits.rtf in Resources */,
+				D65A49551FCBA6C10003F29A /* Tetris.mp3 in Resources */,
 				6DEF23C41B96CC2600BCE792 /* vertex.glsl in Resources */,
 				6DC7076A1BA7273500225B7D /* vertex_textured.glsl in Resources */,
 			);
